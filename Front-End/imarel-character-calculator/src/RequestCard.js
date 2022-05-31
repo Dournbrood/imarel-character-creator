@@ -15,6 +15,7 @@ function RequestCard(props) {
         axios
             .get(`http://localhost:3001/${cardState.targetEndpoint}`)
             .then((response) => {
+                console.log(response.data)
                 setCardState((prev) => ({
                     ...prev,
                     endpointRes: response.data
