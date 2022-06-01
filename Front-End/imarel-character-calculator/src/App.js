@@ -1,16 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
-import RequestCard from './RequestCard';
+import CharacterCalculator from './components/CharacterCalculator';
+import MatchupCalculator from './components/MatchupCalculator';
+import NavBar from './components/NavBar';
+import { useState, createContext } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-function App() {
+import { GlobalContext } from './contexts/GlobalContext';
+const App = () => {
+  const [globalState, setGlobalState] = useState({})
+
   return (
-    <div className="App">
-      <header className="App-header">
+    <Router>
+      <div className="App">
         <>
-        <RequestCard/>
+          <GlobalContext.Provider value={{globalState, setGlobalState}}>
+            <NavBar />
+            <Routes>
+              {/* All the other stuff */}
+              <Route path="/" element={<CharacterCalculator />} />
+              <Route path="/matchup" element={<MatchupCalculator />} />
+            </Routes>
+          </GlobalContext.Provider>
         </>
-      </header>
-    </div>
+      </div>
+    </Router>
   );
 }
 
