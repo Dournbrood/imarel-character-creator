@@ -1,6 +1,6 @@
 html{
   color: white;
-  background-color: #000000;
+  background-color: #303030;
 }
 
 a{
@@ -53,6 +53,8 @@ a{
   justify-content: center;
   padding: 8px;
   background-color: #404040;
+  min-height: 50px;
+  box-shadow: 8px 0 8px 0 #000000;
 }
 
 .stat-container {

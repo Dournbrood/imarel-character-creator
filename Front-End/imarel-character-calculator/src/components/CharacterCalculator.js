@@ -26,11 +26,11 @@ const CharacterCalculator = (props) => {
         </h1>
         <h2>Basic character stats:</h2>
         <br />
-        <StatContainer statName="Name:"/>
-        <StatContainer statName="Gender:"/>
-        <StatContainer statName="Age:"/>
-        <StatContainer statName="Race:"/>
-        <StatContainer statName="Class:"/>
+        <StatContainer statName="Name:" inputType="text"/>
+        <StatContainer statName="Gender:" inputType="text"/>
+        <StatContainer statName="Age:" inputType="number" inputMin={1}/>
+        <StatContainer statName="Race:" inputType="text"/>
+        <StatContainer statName="Class:" inputType="text"/>
         
 
 

@@ -5,7 +5,7 @@ const StatContainer = (props) => {
     return (
         <div className="stat-container">
             <span>{props.statName}</span>
-            <textarea className="stat-textarea"/>
+            <input type={props.inputType} className="stat-textarea" min={props.inputMin}/>
         </div>
     );
 
