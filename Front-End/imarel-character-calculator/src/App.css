@@ -49,10 +49,31 @@ a{
 .navbar {
   display: flex;
   flex-flow: row nowrap;
-  gap: 12px;
+  gap: 40px;
   justify-content: center;
   padding: 8px;
   background-color: #404040;
+}
+
+.stat-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  gap: 40px;
+  width: 300px;
+  margin: 4px 0;
+}
+
+.stat-textarea {
+  width: 200px;
+  height: 24px;
+  padding: 0px 8px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
 }
 
 ul{

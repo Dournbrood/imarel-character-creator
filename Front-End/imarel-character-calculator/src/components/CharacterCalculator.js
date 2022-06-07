@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import axios from 'axios';
 import { GlobalContext } from "../contexts/GlobalContext";
+import StatContainer from "./StatContainer";
 const CharacterCalculator = (props) => {
 
     const {globalState, setGlobalState} = React.useContext(GlobalContext);
@@ -23,8 +24,16 @@ const CharacterCalculator = (props) => {
         <h1>
             This is the Character Calculator page!
         </h1>
+        <h2>Basic character stats:</h2>
         <br />
-        <textarea name="targetEndpoint" value={globalState.targetEndpoint} onChange={handleChange} />
+        <StatContainer statName="Name:"/>
+        <StatContainer statName="Gender:"/>
+        <StatContainer statName="Age:"/>
+        <StatContainer statName="Race:"/>
+        <StatContainer statName="Class:"/>
+        
+
+
 
     </div>);
 }
