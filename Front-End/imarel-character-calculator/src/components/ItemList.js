@@ -8,7 +8,7 @@ const ItemList = (props) => {
     return (
         <div style={{display: "flex", flexFlow: "column nowrap"}}>
             {((globalState && globalState.items) ? Object.keys(globalState.items).map((key) => (
-                <ItemListEntry itemKey={key}/>
+                <><ItemListEntry itemKey={key}/><br/></>
             )) : "oops")}
         </div>
     );

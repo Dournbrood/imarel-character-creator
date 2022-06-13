@@ -21,13 +21,23 @@ const ItemInput = (props) => {
                     }
                 }
             }
-        }))
+        }));
+        clearForm();
     }
 
     const handleChange = (event) => {
         setItemFormState((previous) => ({
             ...previous,
             [event.target.name]: event.target.value
+        }))
+    }
+
+    const clearForm = () => {
+        setItemFormState((previous) => ({
+            itemName: previous.itemName,
+            statName: "",
+            statBase: "",
+            statBonus: ""
         }))
     }
 
