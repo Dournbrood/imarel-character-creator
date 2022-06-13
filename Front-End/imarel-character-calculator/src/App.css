@@ -54,7 +54,7 @@ a{
   padding: 8px;
   background-color: #404040;
   min-height: 50px;
-  box-shadow: 8px 0 8px 0 #000000;
+  box-shadow: 0px 0 8px 0 #000000;
 }
 
 .stat-container {
@@ -67,7 +67,7 @@ a{
 }
 
 .stat-textarea {
-  width: 200px;
+  width: 150px;
   height: 24px;
   padding: 0px 8px;
   box-sizing: border-box;
@@ -76,6 +76,7 @@ a{
   background-color: #f8f8f8;
   font-size: 16px;
   resize: none;
+  margin-right: 16px;
 }
 
 ul{
@@ -83,4 +84,20 @@ ul{
   list-style-position: inside;
   margin:0;
   padding:0;
+}
+
+.horizontalContainer{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.statCard{
+  min-width: 300px;
+  background-color: #404040;
+  margin: 8px;
+  padding: 8px;
+  box-shadow: 0px 4px 4px #000000;
+  border-radius: 5px;
 }

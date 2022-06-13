@@ -4,8 +4,8 @@ import { GlobalContext } from "../contexts/GlobalContext";
 import StatContainer from "./StatContainer";
 const CharacterCalculator = (props) => {
 
-    const {globalState, setGlobalState} = React.useContext(GlobalContext);
-    
+    const { globalState, setGlobalState } = React.useContext(GlobalContext);
+
 
     const handleChange = (e) => {
         e.preventDefault();
@@ -16,26 +16,31 @@ const CharacterCalculator = (props) => {
     }
 
     return (
-    <div style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-    }}>
-        <h1>
-            This is the Character Calculator page!
-        </h1>
-        <h2>Basic character stats:</h2>
-        <br />
-        <StatContainer statName="Name:" inputType="text"/>
-        <StatContainer statName="Gender:" inputType="text"/>
-        <StatContainer statName="Age:" inputType="number" inputMin={1}/>
-        <StatContainer statName="Race:" inputType="text"/>
-        <StatContainer statName="Class:" inputType="text"/>
-        
+        <div style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+        }}>
+            <h1>
+                This is the Character Calculator page!
+            </h1>
+            <div className="horizontalContainer">
+                <div className="statCard">
+                    <h2>Basic character stats:</h2>
+                    <StatContainer statName="Name:" inputType="text" />
+                    <StatContainer statName="Gender:" inputType="text" />
+                    <StatContainer statName="Age:" inputType="number" inputMin={1} />
+                    <StatContainer statName="Race:" inputType="text" />
+                    <StatContainer statName="Class:" inputType="text" />
+                </div>
+                <div className="statCard">
+                    <h2>Items:</h2>
+                </div>
+            </div>
 
 
 
-    </div>);
+        </div>);
 }
 
 export default CharacterCalculator;
