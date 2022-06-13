@@ -2,6 +2,8 @@ import React, { useContext, useState } from "react";
 import axios from 'axios';
 import { GlobalContext } from "../contexts/GlobalContext";
 import StatContainer from "./StatContainer";
+import ItemInput from "./ItemInput";
+import ItemList from "./ItemList";
 const CharacterCalculator = (props) => {
 
     const { globalState, setGlobalState } = React.useContext(GlobalContext);
@@ -35,11 +37,10 @@ const CharacterCalculator = (props) => {
                 </div>
                 <div className="statCard">
                     <h2>Items:</h2>
+                    <ItemInput/>
+                    <ItemList/>
                 </div>
             </div>
-
-
-
         </div>);
 }
 

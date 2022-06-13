@@ -17,7 +17,7 @@ const App = () => {
             <NavBar />
             <Routes>
               {/* All the other stuff */}
-              <Route path="/" element={<CharacterCalculator />} />
+              <Route path="/" element={<CharacterCalculator />}/>
               <Route path="/matchup" element={<MatchupCalculator />} />
             </Routes>
           </GlobalContext.Provider>
