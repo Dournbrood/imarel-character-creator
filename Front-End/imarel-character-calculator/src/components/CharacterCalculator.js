@@ -4,6 +4,7 @@ import { GlobalContext } from "../contexts/GlobalContext";
 import StatContainer from "./StatContainer";
 import ItemInput from "./ItemInput";
 import ItemList from "./ItemList";
+import StatList from "./StatList";
 const CharacterCalculator = (props) => {
 
     const { globalState, setGlobalState } = React.useContext(GlobalContext);
@@ -34,6 +35,7 @@ const CharacterCalculator = (props) => {
                     <StatContainer statName="Age:" inputType="number" inputMin={1} />
                     <StatContainer statName="Race:" inputType="text" />
                     <StatContainer statName="Class:" inputType="text" />
+                    <StatList/>
                 </div>
                 <div className="statCard">
                     <h2>Items:</h2>
