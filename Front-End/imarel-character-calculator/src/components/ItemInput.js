@@ -42,7 +42,7 @@ const ItemInput = (props) => {
     }
 
     return (
-        <div style={{ display: "flex", flexFlow: "row nowrap", gap:"16px" }}>
+        <div style={{ display: "flex", flexFlow: "row nowrap", gap: "16px" }}>
             <div style={{ display: "flex", flexFlow: "column nowrap" }}>
                 <label>Item Name</label>
                 <input type={"text"} onChange={handleChange} name="itemName" value={itemFormState.itemName} />

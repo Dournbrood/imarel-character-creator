@@ -5,7 +5,8 @@ const StatList = (props) => {
     const { globalState, setGlobalState } = React.useContext(GlobalContext);
 
     const generateStatTotals = () => {
-        let statTotals = {}
+        let statTotals = {};
+        let statString = "";
         Object.keys(globalState.items).forEach((itemName) => {
             Object.keys(globalState.items[itemName].stats).forEach((statName) => {
                 if (statName in statTotals) {
@@ -23,30 +24,33 @@ const StatList = (props) => {
         })
         Object.keys(statTotals).forEach((statName) => {
             statTotals[statName] = parseInt(statTotals[statName].base) + parseInt(statTotals[statName].bonus);
-        })
+            statString = statString += `${statTotals[statName]}% ${statName}; `;
+        });
+        statString = statString.slice(0, -1);
         setGlobalState((previous) => ({
             ...previous,
-            totals: { ...statTotals }
-        }))
+            totals: { ...statTotals },
+            statBlock: `[${statString}]`
+        }));
     }
 
-    // useEffect(() => {
-    //     generateStatTotals();
-    // }, [globalState])
-
     return (
-        <>
+        <div style={{ display: "flex", flexFlow: "column nowrap" }}>
+            <div style={{display: "flex", flexFlow: "row nowrap", justifyContent:"end", gap:"40px"}}>
+                <label>Stat Block:</label>
+                <input className={"stat-textarea"} type={"text"} value={((globalState && globalState.statBlock) ? globalState.statBlock : "")} style={{width:"150px", marginRight:"16px"}}/>
+            </div>
             <input type={"button"} value="Get Stats!" onClick={generateStatTotals} />
             <>
                 {
                     ((globalState && globalState.totals) ?
                         Object.keys(globalState.totals).map((statName) => (
-                            <>{globalState.totals[statName]}% {statName}; </>
+                            <>{statName}: {globalState.totals[statName]}% <br /></>
                         ))
                         : [])
                 }
             </>
-        </>
+        </div>
     );
 }
 
