@@ -36,9 +36,9 @@ const StatList = (props) => {
 
     return (
         <div style={{ display: "flex", flexFlow: "column nowrap" }}>
-            <div style={{display: "flex", flexFlow: "row nowrap", justifyContent:"end", gap:"40px"}}>
+            <div style={{ display: "flex", flexFlow: "row nowrap", justifyContent: "end", gap: "40px" }}>
                 <label>Stat Block:</label>
-                <input className={"stat-textarea"} type={"text"} value={((globalState && globalState.statBlock) ? globalState.statBlock : "")} style={{width:"150px", marginRight:"16px"}}/>
+                <input className={"stat-textarea"} type={"text"} value={((globalState && globalState.statBlock) ? globalState.statBlock : "")} style={{ width: "150px", marginRight: "16px" }} />
             </div>
             <input type={"button"} value="Get Stats!" onClick={generateStatTotals} />
             <>
