@@ -42,13 +42,28 @@ const ItemInput = (props) => {
     }
 
     return (
-        <>
-            <input type={"text"} onChange={handleChange} name="itemName" value={itemFormState.itemName} />
-            <input type={"text"} onChange={handleChange} name="statName" value={itemFormState.statName} />
-            <input type={"number"} onChange={handleChange} name="statBase" value={itemFormState.statBase} />
-            <input type={"number"} onChange={handleChange} name="statBonus" value={itemFormState.statBonus} />
-            <input type={"button"} onClick={handleSubmit} value="Add Stat" />
-        </>
+        <div style={{ display: "flex", flexFlow: "row nowrap", gap:"16px" }}>
+            <div style={{ display: "flex", flexFlow: "column nowrap" }}>
+                <label>Item Name</label>
+                <input type={"text"} onChange={handleChange} name="itemName" value={itemFormState.itemName} />
+            </div>
+            <div style={{ display: "flex", flexFlow: "column nowrap" }}>
+                <label>Stat Name</label>
+                <input type={"text"} onChange={handleChange} name="statName" value={itemFormState.statName} />
+            </div>
+            <div style={{ display: "flex", flexFlow: "column nowrap" }}>
+                <label>Stat base value</label>
+                <input type={"number"} onChange={handleChange} name="statBase" value={itemFormState.statBase} />
+            </div>
+            <div style={{ display: "flex", flexFlow: "column nowrap" }}>
+                <label>Stat bonus value</label>
+                <input type={"number"} onChange={handleChange} name="statBonus" value={itemFormState.statBonus} />
+            </div>
+            <div style={{ display: "flex", flexFlow: "column nowrap" }}>
+                <br />
+                <input type={"button"} onClick={handleSubmit} value="Add Stat" />
+            </div>
+        </div>
     );
 }
 

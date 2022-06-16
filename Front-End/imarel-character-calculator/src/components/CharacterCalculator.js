@@ -35,15 +35,16 @@ const CharacterCalculator = (props) => {
                     <StatContainer statName="Age:" inputType="number" inputMin={1} />
                     <StatContainer statName="Race:" inputType="text" />
                     <StatContainer statName="Class:" inputType="text" />
-                    <StatList/>
+                    <StatList />
                 </div>
                 <div className="statCard">
                     <h2>Items:</h2>
-                    <ItemInput/>
-                    <ItemList/>
+                    <ItemInput />
+                    <ItemList />
                 </div>
             </div>
-        </div>);
+        </div>
+    );
 }
 
 export default CharacterCalculator;
