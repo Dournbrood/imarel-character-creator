@@ -7,22 +7,24 @@ const ItemInput = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        setGlobalState((previous) => ({
-            ...previous,
-            items: {
-                ...previous.items,
-                [itemFormState.itemName]: {
-                    stats: {
-                        ...(previous && previous.items && previous.items[itemFormState.itemName] && previous.items[itemFormState.itemName].stats),
-                        [itemFormState.statName]: {
-                            base: itemFormState.statBase,
-                            bonus: itemFormState.statBonus
+        if (itemFormState.itemName && itemFormState.itemName != "" && itemFormState.statName && itemFormState.statName != "" && itemFormState.statBase && itemFormState.statBase != "" && itemFormState.statBonus && itemFormState.statBonus != "") {
+            setGlobalState((previous) => ({
+                ...previous,
+                items: {
+                    ...previous.items,
+                    [itemFormState.itemName]: {
+                        stats: {
+                            ...(previous && previous.items && previous.items[itemFormState.itemName] && previous.items[itemFormState.itemName].stats),
+                            [itemFormState.statName]: {
+                                base: itemFormState.statBase,
+                                bonus: itemFormState.statBonus
+                            }
                         }
                     }
                 }
-            }
-        }));
-        clearForm();
+            }));
+            clearForm();
+        }
     }
 
     const handleChange = (event) => {
