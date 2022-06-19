@@ -9,7 +9,7 @@ const MatchupCalculator = (props) => {
             <h2>(I don't do anything except display the global state for debug purposes quite yet. Come back later!)</h2>
             <div style={{textAlign:"start", width:"300px", margin:"0 auto"}}>
                 <label>Global State: </label>
-                <pre>{JSON.stringify(globalState, null, "\t")}</pre>
+                <pre>{JSON.stringify(globalState, null, 4)}</pre>
             </div>
         </>
     );
