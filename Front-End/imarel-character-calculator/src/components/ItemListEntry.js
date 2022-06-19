@@ -10,6 +10,10 @@ const ItemListEntry = (props) => {
             {Object.keys(globalState.items[props.itemKey].stats).map((statName) => (
                 <>{globalState.items[props.itemKey].stats[statName].base}% base {statName}, {globalState.items[props.itemKey].stats[statName].bonus}% bonus {statName}; </>
             ))}
+            <input type="button" onClick={()=>{
+                delete globalState.items[props.itemKey];
+                setGlobalState((previous) => ({...previous}))
+            }} value="Delete"/>
         </div>
     );
 }
