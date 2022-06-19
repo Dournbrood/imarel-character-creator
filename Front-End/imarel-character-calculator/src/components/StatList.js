@@ -40,7 +40,7 @@ const StatList = (props) => {
                 <label>Stat Block:</label>
                 <input className={"stat-textarea"} type={"text"} value={((globalState && globalState.statBlock) ? globalState.statBlock : "")} style={{ width: "150px", marginRight: "16px" }} />
             </div>
-            <input type={"button"} value="Get Stats!" onClick={generateStatTotals} />
+            <input type={"button"} value="Generate stats" onClick={generateStatTotals} />
             <>
                 {
                     ((globalState && globalState.totals) ?

@@ -13,7 +13,7 @@ const ItemListEntry = (props) => {
             <input type="button" onClick={()=>{
                 delete globalState.items[props.itemKey];
                 setGlobalState((previous) => ({...previous}))
-            }} value="Delete"/>
+            }} value="Delete item"/>
         </div>
     );
 }

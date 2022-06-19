@@ -62,7 +62,7 @@ const ItemInput = (props) => {
                 <input type={"number"} onChange={handleChange} name="statBonus" value={itemFormState.statBonus} />
             </div>
             <div style={{ display: "flex", flexFlow: "column nowrap", justifyContent: "end" }}>
-                <input type={"button"} onClick={handleSubmit} value="Add Stat" />
+                <input type={"button"} onClick={handleSubmit} value="Set stat" />
             </div>
         </div>
     );
