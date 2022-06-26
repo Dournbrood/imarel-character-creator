@@ -8,19 +8,21 @@ const StatList = (props) => {
         let statTotals = {};
         let statString = "";
         Object.keys(globalState.items).forEach((itemName) => {
-            Object.keys(globalState.items[itemName].stats).forEach((statName) => {
-                if (statName in statTotals) {
-                    if (Math.abs(parseInt(globalState.items[itemName].stats[statName].base)) > Math.abs(parseInt(statTotals[statName].base))) {
-                        statTotals[statName].base = parseInt(globalState.items[itemName].stats[statName].base)
+            if (globalState.items[itemName].enabled) {
+                Object.keys(globalState.items[itemName].stats).forEach((statName) => {
+                    if (statName in statTotals) {
+                        if (Math.abs(parseInt(globalState.items[itemName].stats[statName].base)) > Math.abs(parseInt(statTotals[statName].base))) {
+                            statTotals[statName].base = parseInt(globalState.items[itemName].stats[statName].base)
+                        }
+                        statTotals[statName].bonus = parseInt(statTotals[statName].bonus) + parseInt(globalState.items[itemName].stats[statName].bonus);
                     }
-                    statTotals[statName].bonus = parseInt(statTotals[statName].bonus) + parseInt(globalState.items[itemName].stats[statName].bonus);
-                }
-                else {
-                    statTotals[statName] = {}
-                    statTotals[statName].base = parseInt(globalState.items[itemName].stats[statName].base);
-                    statTotals[statName].bonus = parseInt(globalState.items[itemName].stats[statName].bonus);
-                }
-            })
+                    else {
+                        statTotals[statName] = {}
+                        statTotals[statName].base = parseInt(globalState.items[itemName].stats[statName].base);
+                        statTotals[statName].bonus = parseInt(globalState.items[itemName].stats[statName].bonus);
+                    }
+                })
+            }
         })
         Object.keys(statTotals).forEach((statName) => {
             statTotals[statName] = parseInt(statTotals[statName].base) + parseInt(statTotals[statName].bonus);
