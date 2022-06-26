@@ -28,7 +28,7 @@ const ItemListEntry = (props) => {
 
     try {
         return (
-            <div>
+            <div style={{background: "#505050"}}>
                 <div style={{ display: "flex", flexFlow: "row nowrap", justifyContent: "space-between" }} onClick={handleCollapse}>
                     <div>
                         <input id="itemCheckbox" name="itemCheckbox" type={"checkbox"} onChange={handleCheckbox} checked={globalState.items[props.itemKey].enabled} />
@@ -41,7 +41,7 @@ const ItemListEntry = (props) => {
                 </div>
                 {
                     ((itemListEntryState && itemListEntryState.collapsed === false) ? Object.keys(globalState.items[props.itemKey].stats).map((statName) => (
-                        <>{globalState.items[props.itemKey].stats[statName].base}% base {statName}, {globalState.items[props.itemKey].stats[statName].bonus}% bonus {statName}; </>
+                        <>{globalState.items[props.itemKey].stats[statName].base}% base {statName}, {globalState.items[props.itemKey].stats[statName].bonus}% bonus {statName}; <br/></>
                     )) : [])
                 }
             </div>
